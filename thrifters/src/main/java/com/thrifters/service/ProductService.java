@@ -42,6 +42,7 @@ public class ProductService {
         if(secondLevel==null){
             Category secondLevelCategory = new Category();
             secondLevelCategory.setName(req.getSecondLevelCategory());
+            secondLevelCategory.setParentCategory(topLevel);
             secondLevelCategory.setLevel(2);
             secondLevel = categoryRepository.save(secondLevelCategory);
         }
@@ -51,6 +52,7 @@ public class ProductService {
             Category thirdLevelCategory = new Category();
             thirdLevelCategory.setName(req.getThirdLevelCategory());
             thirdLevelCategory.setLevel(3);
+            thirdLevelCategory.setParentCategory(secondLevel);
             thirdLevel = categoryRepository.save(thirdLevelCategory);
         }
 

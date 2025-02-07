@@ -19,7 +19,5 @@ public class OrderService {
     @Autowired
     private ProductService productService;
 
-    public Order findOrderById(Long orderId )throws OrderException {
 
-    }
 }
